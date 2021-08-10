@@ -41,8 +41,6 @@ struct DetectSoundsView: View {
         )
             .resizable()
             .scaledToFill()
-            .clipped()
-//            .aspectRatio(contentMode: .fill)
     }
 }
 
