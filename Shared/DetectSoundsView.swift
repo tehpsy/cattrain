@@ -17,9 +17,13 @@ struct DetectSoundsView: View {
 
                 VStack {
                     Spacer()
-                    Toggle("TRAIN IT!!", isOn: $state.playAlert)
-                        .frame(width: 200)
-                        .offset(x: 0, y: -10)
+                    Toggle(isOn: $state.playAlert, label: {
+                        Image(systemName: "graduationcap.fill")
+                        Text("Training Mode").fontWeight(.bold)
+                    })
+                        .frame(width: 240)
+                        .padding(.bottom)
+                        .toggleStyle(SwitchToggleStyle(tint: .orange))
                 }
 
                 VStack {
