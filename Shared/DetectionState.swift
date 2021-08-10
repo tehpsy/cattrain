@@ -34,6 +34,13 @@ struct DetectionState {
     /// The most recent confidence measurement for the sound.
     var currentConfidence = 0.0
 
+    static var `default` = DetectionState(
+        presenceThreshold: 0.5,
+        absenceThreshold: 0.3,
+        presenceMeasurementsToStartDetection: 2,
+        absenceMeasurementsToEndDetection: 30
+    )
+
     /// Creates a detection state with a confidence of zero, and a state that indicates the system doesn't detect a sound.
     init(presenceThreshold: Double,
          absenceThreshold: Double,

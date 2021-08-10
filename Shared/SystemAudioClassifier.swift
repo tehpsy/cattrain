@@ -51,12 +51,6 @@ final class SystemAudioClassifier: NSObject {
     /// A subject to deliver sound classification results to, including an error, if necessary.
     private var subject: PassthroughSubject<SNClassificationResult, Error>?
 
-    /// Initializes a SystemAudioClassifier instance, and marks it as private because the instance operates as a singleton.
-    private override init() {}
-
-    /// A singleton instance of the SystemAudioClassifier class.
-    static let singleton = SystemAudioClassifier()
-
     /// Requests permission to access microphone input, throwing an error if the user denies access.
     private func ensureMicrophoneAccess() throws {
         var hasMicrophoneAccess = false
