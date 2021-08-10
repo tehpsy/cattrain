@@ -3,14 +3,24 @@ import SwiftUI
 
 struct DetectSoundsView: View {
     @ObservedObject var state: AppState
-    @Binding var config: AppConfiguration
+    let config: AppConfiguration
 
     var body: some View {
         VStack {
             ZStack {
-                state.detectionState.currentConfidence > 0.8 ?
-                    Color(.green) :
-                    Color(.red)
+                Color(.black)
+
+                Self.image(given: state.detectionState.currentConfidence)
+
+                    .clipped()
+                    .edgesIgnoringSafeArea(.all)
+
+                VStack {
+                    Spacer()
+                    Toggle("TRAIN IT!!", isOn: $state.playAlert)
+                        .frame(width: 200)
+                        .offset(x: 0, y: -10)
+                }
 
                 VStack {
                     Text("Sound Detection Paused").padding()
@@ -21,5 +31,26 @@ struct DetectSoundsView: View {
                  .disabled(state.soundDetectionIsRunning)
             }
         }
+    }
+
+    private static func image(given confidence: Double) -> some View {
+        return (
+            confidence > 0.8 ?
+                Image("open") :
+                Image("shut")
+        )
+            .resizable()
+            .scaledToFill()
+            .clipped()
+//            .aspectRatio(contentMode: .fill)
+    }
+}
+
+struct DetectSoundsView_Previews: PreviewProvider {
+    static var previews: some View {
+        DetectSoundsView(
+            state: AppState(),
+            config: AppConfiguration()
+        )
     }
 }

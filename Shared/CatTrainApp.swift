@@ -1,6 +1,7 @@
 import SwiftUI
 import SoundAnalysis
 import Combine
+import AVFoundation
 
 @main
 struct CatTrainApp: App {
@@ -23,9 +24,11 @@ class AppState: ObservableObject {
     private var detectionCancellable: AnyCancellable? = nil
     private let appConfig = AppConfiguration()
     private let systemAudioClassifier = SystemAudioClassifier()
+    private var player: AVAudioPlayer?
 
     @Published var detectionState: DetectionState = DetectionState.default
     @Published var soundDetectionIsRunning: Bool = false
+    @Published var playAlert: Bool = false
 
     init() {
         restartDetection(config: appConfig)
@@ -46,6 +49,10 @@ class AppState: ObservableObject {
             receiveValue: { result in
                 let confidence = result.classification(forIdentifier: self.appConfig.monitoredSound)?.confidence ?? 0
                 self.detectionState = DetectionState(advancedFrom: self.detectionState, currentConfidence: confidence)
+
+                if self.playAlert && confidence > 0.8 {
+                    self.playSound()
+                }
             })
 
         soundDetectionIsRunning = true
@@ -54,5 +61,14 @@ class AppState: ObservableObject {
           inferenceWindowSize: config.inferenceWindowSize,
           overlapFactor: config.overlapFactor
         )
+    }
+
+    func playSound() {
+        guard player == nil || !(player!.isPlaying) else { return }
+
+        let data = NSDataAsset(name: "airhorn")!.data
+        player = try! AVAudioPlayer(data: data)
+        player!.prepareToPlay()
+        player!.play()
     }
 }

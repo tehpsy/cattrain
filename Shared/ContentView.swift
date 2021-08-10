@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var appConfig = AppConfiguration()
+    let appConfig = AppConfiguration()
     @StateObject var appState = AppState()
 
     var body: some View {
         DetectSoundsView(
             state: appState,
-            config: $appConfig
+            config: appConfig
         )
     }
 }
