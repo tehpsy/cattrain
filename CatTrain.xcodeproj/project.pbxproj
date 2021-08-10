@@ -13,6 +13,14 @@
 		7760EE1126C1DD4F002F4BD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760EDFC26C1DD4E002F4BD7 /* ContentView.swift */; };
 		7760EE1226C1DD4F002F4BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7760EDFD26C1DD4F002F4BD7 /* Assets.xcassets */; };
 		7760EE1326C1DD4F002F4BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7760EDFD26C1DD4F002F4BD7 /* Assets.xcassets */; };
+		7794E64826C215B000175A53 /* DetectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E64726C215B000175A53 /* DetectionState.swift */; };
+		7794E64926C215B000175A53 /* DetectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E64726C215B000175A53 /* DetectionState.swift */; };
+		7794E64B26C2170200175A53 /* SystemAudioClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E64A26C2170200175A53 /* SystemAudioClassifier.swift */; };
+		7794E64C26C2170200175A53 /* SystemAudioClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E64A26C2170200175A53 /* SystemAudioClassifier.swift */; };
+		7794E64E26C219DE00175A53 /* ClassificationResultsSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E64D26C219DE00175A53 /* ClassificationResultsSubject.swift */; };
+		7794E64F26C219DE00175A53 /* ClassificationResultsSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E64D26C219DE00175A53 /* ClassificationResultsSubject.swift */; };
+		7794E65126C21A6F00175A53 /* DetectSoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E65026C21A6F00175A53 /* DetectSoundsView.swift */; };
+		7794E65226C21A6F00175A53 /* DetectSoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794E65026C21A6F00175A53 /* DetectSoundsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,10 @@
 		7760EE0A26C1DD4F002F4BD7 /* CatTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7760EE0C26C1DD4F002F4BD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7760EE0D26C1DD4F002F4BD7 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		7794E64726C215B000175A53 /* DetectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectionState.swift; sourceTree = "<group>"; };
+		7794E64A26C2170200175A53 /* SystemAudioClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAudioClassifier.swift; sourceTree = "<group>"; };
+		7794E64D26C219DE00175A53 /* ClassificationResultsSubject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassificationResultsSubject.swift; sourceTree = "<group>"; };
+		7794E65026C21A6F00175A53 /* DetectSoundsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectSoundsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +69,13 @@
 		7760EDFA26C1DD4E002F4BD7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7760EDFB26C1DD4E002F4BD7 /* CatTrainApp.swift */,
-				7760EDFC26C1DD4E002F4BD7 /* ContentView.swift */,
 				7760EDFD26C1DD4F002F4BD7 /* Assets.xcassets */,
+				7760EDFB26C1DD4E002F4BD7 /* CatTrainApp.swift */,
+				7794E64D26C219DE00175A53 /* ClassificationResultsSubject.swift */,
+				7760EDFC26C1DD4E002F4BD7 /* ContentView.swift */,
+				7794E64726C215B000175A53 /* DetectionState.swift */,
+				7794E65026C21A6F00175A53 /* DetectSoundsView.swift */,
+				7794E64A26C2170200175A53 /* SystemAudioClassifier.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -188,7 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7760EE1026C1DD4F002F4BD7 /* ContentView.swift in Sources */,
+				7794E65126C21A6F00175A53 /* DetectSoundsView.swift in Sources */,
 				7760EE0E26C1DD4F002F4BD7 /* CatTrainApp.swift in Sources */,
+				7794E64E26C219DE00175A53 /* ClassificationResultsSubject.swift in Sources */,
+				7794E64B26C2170200175A53 /* SystemAudioClassifier.swift in Sources */,
+				7794E64826C215B000175A53 /* DetectionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +217,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7760EE1126C1DD4F002F4BD7 /* ContentView.swift in Sources */,
+				7794E65226C21A6F00175A53 /* DetectSoundsView.swift in Sources */,
 				7760EE0F26C1DD4F002F4BD7 /* CatTrainApp.swift in Sources */,
+				7794E64F26C219DE00175A53 /* ClassificationResultsSubject.swift in Sources */,
+				7794E64C26C2170200175A53 /* SystemAudioClassifier.swift in Sources */,
+				7794E64926C215B000175A53 /* DetectionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +348,7 @@
 				DEVELOPMENT_TEAM = 7VYBQV3T2Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +370,7 @@
 				DEVELOPMENT_TEAM = 7VYBQV3T2Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

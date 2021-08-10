@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var appConfig = AppConfiguration()
+    @StateObject var appState = AppState()
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        DetectSoundsView(
+            state: appState,
+            config: $appConfig
+        )
     }
 }
 
